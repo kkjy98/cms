@@ -1,0 +1,222 @@
+{
+	"info": {
+		"_postman_id": "48182efc-c187-4d16-9678-43378eddbebf",
+		"name": "CMS_rest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28946257"
+	},
+	"item": [
+		{
+			"name": "addVC",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Holiday Special Voucher\",\r\n    \"description\": \"Get a 20% discount on all purchases\",\r\n    \"expiryDate\": \"2025-12-31\",\r\n    \"imageUrl\": \"https://example.com/voucher.jpg\",\r\n    \"amount\": 50.00,\r\n    \"paymentMethod\": \"VISA\",\r\n    \"quantity\": 2,\r\n    \"buyType\": \"MYSELF_ONLY\",\r\n    \"buyerName\": \"John Doe\",\r\n    \"buyerPhone\": \"+6598765432\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/cms/v1/voucher/addVC",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"cms",
+						"v1",
+						"voucher",
+						"addVC"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editVC",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Holiday Special Voucher\",\r\n    \"description\": \"Get a 30% discount on all purchases\",\r\n    \"expiryDate\": \"2025-11-31\",\r\n    \"imageUrl\": \"https://example.com/voucher.jpg\",\r\n    \"amount\": 65.00,\r\n    \"paymentMethod\": \"AMEX\",\r\n    \"quantity\": 2\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/cms/v1/voucher/editVC/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"cms",
+						"v1",
+						"voucher",
+						"editVC",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "toggleVC",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/cms/v1/voucher/toggleVC/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"cms",
+						"v1",
+						"voucher",
+						"toggleVC",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getVCList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/cms/v1/voucher/list?page=1&size=5&sortBy=title&sortDir=desc\n",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"cms",
+						"v1",
+						"voucher",
+						"list"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "size",
+							"value": "5"
+						},
+						{
+							"key": "sortBy",
+							"value": "title"
+						},
+						{
+							"key": "sortDir",
+							"value": "desc\n"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getVCDetails",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "checkout",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "getHistory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "historylist",
+					"host": [
+						"historylist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "token",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "ms_app_restapi",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "zFe0biM6ys52wnMSOoWgMW35q55KbGX0",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "kelvinkjy15",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "VCI5MMOBEm1i7ZF+YTRDTQ==",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/realms/ms_app/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"realms",
+						"ms_app",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
